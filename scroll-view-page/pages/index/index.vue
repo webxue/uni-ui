@@ -1,0 +1,167 @@
+<template>
+	<view class="content">
+		<scroll-view-page :list="tabs" :cate="cate" :sticky="sticky" :showLine="showLine" :itemColor="itemColor" :lineColor="lineColor" :lineAnimated="lineAnimated"></scroll-view-page>
+	</view>
+</template>
+
+<script>
+	import scrollViewPage from '@/components/scroll-view-page/index.vue';
+	export default {
+		components:{
+			scrollViewPage
+		},
+		data() {
+			return {
+				sticky:true,//是否固定tab
+				showLine:true,//是否显示tab底部线条
+				itemColor:'#F00',//tab栏选中的文本颜色
+				lineColor:'#0F0',//tab栏选中的线条显色
+				lineAnimated:true,//是否展示下划线滑动效果
+				// tab栏
+				tabs:[
+					{title:'test1'},
+					{title:'test2'},
+					{title:'test3'},
+					{title:'test4'},
+					{title:'test5'},
+					{title:'test6'},
+					{title:'test7'},
+					{title:'test8'},
+					{title:'test9'}
+				],
+				// 内容数据
+				cate:[
+					{name:'test1',child_cate:[
+						{name:'1-a',logo_path:'../../static/logo.png'},
+						{name:'1-b',logo_path:'../../static/logo.png'},
+						{name:'1-c',logo_path:'../../static/logo.png'},
+						{name:'1-d',logo_path:'../../static/logo.png'},
+						{name:'1-e',logo_path:'../../static/logo.png'},
+						{name:'1-f',logo_path:'../../static/logo.png'},
+						{name:'1-g',logo_path:'../../static/logo.png'},
+						{name:'1-h',logo_path:'../../static/logo.png'},
+						{name:'1-i',logo_path:'../../static/logo.png'},
+						{name:'1-j',logo_path:'../../static/logo.png'},
+						{name:'1-k',logo_path:'../../static/logo.png'},
+						{name:'1-l',logo_path:'../../static/logo.png'},
+						{name:'1-m',logo_path:'../../static/logo.png'},
+						{name:'1-n',logo_path:'../../static/logo.png'},
+						{name:'1-o',logo_path:'../../static/logo.png'},
+						{name:'1-p',logo_path:'../../static/logo.png'},
+						{name:'1-q',logo_path:'../../static/logo.png'},
+						{name:'1-r',logo_path:'../../static/logo.png'},
+						{name:'1-s',logo_path:'../../static/logo.png'},
+						{name:'1-t',logo_path:'../../static/logo.png'},
+						{name:'1-u',logo_path:'../../static/logo.png'},
+						{name:'1-v',logo_path:'../../static/logo.png'},
+						{name:'1-w',logo_path:'../../static/logo.png'},
+						{name:'1-x',logo_path:'../../static/logo.png'},
+						{name:'1-y',logo_path:'../../static/logo.png'},
+						{name:'1-z',logo_path:'../../static/logo.png'}
+					]},
+					{name:'test2',child_cate:[
+						{name:'2-a',logo_path:'../../static/logo.png'},
+						{name:'2-b',logo_path:'../../static/logo.png'},
+						{name:'2-c',logo_path:'../../static/logo.png'},
+						{name:'2-d',logo_path:'../../static/logo.png'},
+						{name:'2-e',logo_path:'../../static/logo.png'},
+						{name:'2-f',logo_path:'../../static/logo.png'},
+						{name:'2-g',logo_path:'../../static/logo.png'},
+						{name:'2-h',logo_path:'../../static/logo.png'}
+					]},
+					{name:'test3',child_cate:[
+						{name:'3-a',logo_path:'../../static/logo.png'},
+						{name:'3-b',logo_path:'../../static/logo.png'},
+						{name:'3-c',logo_path:'../../static/logo.png'},
+						{name:'3-d',logo_path:'../../static/logo.png'},
+						{name:'3-e',logo_path:'../../static/logo.png'},
+						{name:'3-f',logo_path:'../../static/logo.png'},
+						{name:'3-g',logo_path:'../../static/logo.png'},
+						{name:'3-h',logo_path:'../../static/logo.png'},
+						{name:'3-i',logo_path:'../../static/logo.png'},
+						{name:'3-j',logo_path:'../../static/logo.png'},
+						{name:'3-k',logo_path:'../../static/logo.png'},
+						{name:'3-l',logo_path:'../../static/logo.png'},
+						{name:'3-m',logo_path:'../../static/logo.png'},
+						{name:'3-n',logo_path:'../../static/logo.png'},
+						{name:'3-o',logo_path:'../../static/logo.png'}
+					]},
+					{name:'test4',child_cate:[
+						{name:'4-a',logo_path:'../../static/logo.png'},
+						{name:'4-b',logo_path:'../../static/logo.png'},
+						{name:'4-c',logo_path:'../../static/logo.png'},
+						{name:'4-d',logo_path:'../../static/logo.png'},
+						{name:'4-e',logo_path:'../../static/logo.png'},
+						{name:'4-f',logo_path:'../../static/logo.png'},
+						{name:'4-g',logo_path:'../../static/logo.png'},
+						{name:'4-h',logo_path:'../../static/logo.png'},
+						{name:'4-i',logo_path:'../../static/logo.png'},
+						{name:'4-j',logo_path:'../../static/logo.png'},
+						{name:'4-k',logo_path:'../../static/logo.png'},
+						{name:'4-l',logo_path:'../../static/logo.png'},
+						{name:'4-m',logo_path:'../../static/logo.png'},
+						{name:'4-n',logo_path:'../../static/logo.png'},
+						{name:'4-o',logo_path:'../../static/logo.png'}
+					]},
+					{name:'test5',child_cate:[
+						{name:'5-a',logo_path:'../../static/logo.png'},
+						{name:'5-b',logo_path:'../../static/logo.png'},
+						{name:'5-c',logo_path:'../../static/logo.png'},
+						{name:'5-d',logo_path:'../../static/logo.png'},
+						{name:'5-e',logo_path:'../../static/logo.png'},
+						{name:'5-f',logo_path:'../../static/logo.png'},
+						{name:'5-g',logo_path:'../../static/logo.png'}
+					]},
+					{name:'test6',child_cate:[
+						{name:'6-a',logo_path:'../../static/logo.png'},
+						{name:'6-b',logo_path:'../../static/logo.png'},
+						{name:'6-c',logo_path:'../../static/logo.png'},
+						{name:'6-d',logo_path:'../../static/logo.png'},
+						{name:'6-e',logo_path:'../../static/logo.png'},
+						{name:'6-f',logo_path:'../../static/logo.png'},
+						{name:'6-g',logo_path:'../../static/logo.png'}
+					]},
+					{name:'test7',child_cate:[
+						{name:'7-a',logo_path:'../../static/logo.png'},
+						{name:'7-b',logo_path:'../../static/logo.png'},
+						{name:'7-c',logo_path:'../../static/logo.png'},
+						{name:'7-d',logo_path:'../../static/logo.png'},
+						{name:'7-e',logo_path:'../../static/logo.png'},
+						{name:'7-f',logo_path:'../../static/logo.png'},
+						{name:'7-g',logo_path:'../../static/logo.png'}
+					]},
+					{name:'test8',child_cate:[
+						{name:'8-a',logo_path:'../../static/logo.png'},
+						{name:'8-b',logo_path:'../../static/logo.png'},
+						{name:'8-c',logo_path:'../../static/logo.png'},
+						{name:'8-d',logo_path:'../../static/logo.png'},
+						{name:'8-e',logo_path:'../../static/logo.png'},
+						{name:'8-f',logo_path:'../../static/logo.png'},
+						{name:'8-g',logo_path:'../../static/logo.png'}
+					]},
+					{name:'test9',child_cate:[
+						{name:'9-a',logo_path:'../../static/logo.png'},
+						{name:'9-b',logo_path:'../../static/logo.png'},
+						{name:'9-c',logo_path:'../../static/logo.png'},
+						{name:'9-d',logo_path:'../../static/logo.png'},
+						{name:'9-e',logo_path:'../../static/logo.png'},
+						{name:'9-f',logo_path:'../../static/logo.png'},
+						{name:'9-g',logo_path:'../../static/logo.png'}
+					]},
+					{name:'test10',child_cate:[
+						{name:'10-a',logo_path:'../../static/logo.png'},
+						{name:'10-b',logo_path:'../../static/logo.png'},
+						{name:'10-c',logo_path:'../../static/logo.png'},
+						{name:'10-d',logo_path:'../../static/logo.png'},
+						{name:'10-e',logo_path:'../../static/logo.png'},
+						{name:'10-f',logo_path:'../../static/logo.png'},
+						{name:'10-g',logo_path:'../../static/logo.png'}
+					]}
+				]
+			}
+		}
+	}
+</script>
+
+<style>
+</style>
