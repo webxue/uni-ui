@@ -4,7 +4,19 @@
 			<view class="search">
 				<view class="search_left">
 					<view class="icon"><uni-icons type="search"></uni-icons></view>
-					<view class="input"><input type="text" placeholder-class="input_placeholder" :placeholder="placeholder" v-model="searchText" confirm-type="search" @confirm="search"/></view>
+					<view class="input">
+						<input type="text" 
+							placeholder-class="input_placeholder" 
+							:placeholder="placeholder" 
+							v-model="searchText" 
+							confirm-type="search" 
+							@confirm="search"
+							@focus="handleFocus"
+							@blur="handleBlur"
+							:focus="focus"
+							:adjust-position="false"
+						/>
+					</view>
 				</view>
 				<view class="back" @click="handleBack">{{backText}}</view>
 			</view>
@@ -71,6 +83,10 @@
 			oType:{//热门搜索文本样式 round round-fill square square-fill
 				type:String,
 				default:''
+			},
+			focus:{//输入框是否自动获得焦点
+				type:Boolean,
+				default:true
 			}
 		},
 		data(){
@@ -88,6 +104,7 @@
 		methods:{
 			// 搜索
 			search(){
+				uni.hideKeyboard();
 				if(!this.searchText){
 					uni.showToast({
 						title:'请输入内容',
@@ -142,6 +159,14 @@
 			clearCach(){
 				uni.removeStorage({ key:'hList' })
 				this.hList = uni.getStorageSync('hList');
+			},
+			// 获得焦点时触发
+			handleFocus(e){
+				this.$emit('focus',e)
+			},
+			// 失去焦点时触发
+			handleBlur(e){
+				this.$emit('blur',e)
 			}
 		},
 		watch:{
