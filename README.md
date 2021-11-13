@@ -1,10 +1,10 @@
 # uni-ui
 uni-ui插件
 
-## scroll-view-page
-[scroll-view-page](https://ext.dcloud.net.cn/plugin?id=4300)
-## search-page
-[search-page](https://ext.dcloud.net.cn/plugin?id=4319)
+## 我的组件
++ [scroll-view-page](https://ext.dcloud.net.cn/plugin?id=4300)
++ [search-page](https://ext.dcloud.net.cn/plugin?id=4319)
++ [x-pay-pwd](https://ext.dcloud.net.cn/plugin?id=6658)
 
 # 参与贡献
 + xueshuai(xueshuai_12@163.com)
